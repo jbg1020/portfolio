@@ -172,7 +172,7 @@ body {
 }
 
 .main-picture {
-  background-image: url("http://via.placeholder.com/594x1032");
+  background-image: url("../images/pizzame.png");
   padding: 0;
   margin-top: 24px;
   margin-left: 24px;
@@ -2285,4 +2285,8 @@ body.blog .pagination li a i {
     padding: 15px;
   }
   
+}
+
+.colored {
+  font-size: 3.5rem;
 }
