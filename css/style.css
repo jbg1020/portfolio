@@ -2290,3 +2290,7 @@ body.blog .pagination li a i {
 .colored {
   font-size: 3.5rem;
 }
+
+strong {
+  font-weight: bold;
+}
