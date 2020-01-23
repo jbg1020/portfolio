@@ -9,7 +9,6 @@ if (isset($_POST['submit'])) {
     $headers = "From: ".$name." <".$email."> \r\n";
 
     mail($to,$subject,$message,$headers);
-    echo (mail($to,$subject,$message,$headers)) ? 'WORKED' : 'FAILED';
 
 }
 
