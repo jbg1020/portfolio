@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_POST['name'],$_POST['email'])) {
+if (!isset($_POST['name'],$_POST['email'])) {
       
     $name = $_POST['name'];
     $email = $_POST['email'];
@@ -11,7 +11,7 @@ if (isset($_POST['name'],$_POST['email'])) {
     $headers = "From: ".$name." <".$email."> \r\n";
     $send_email = mail($to,$subject,$message,$headers);
     
-    echo (!$send_email) ? 'success' : 'error';
+    echo ($send_email) ? 'success' : 'error';
       
 }
 
