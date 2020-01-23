@@ -1,18 +1,16 @@
 <?php
-if (isset($_POST['name'],$_POST['email'])) {
-      
+
+if (isset($_POST['submit'])) {
     $name = $_POST['name'];
     $email = $_POST['email'];
     $message = $_POST['comment'];
-      
-    // Set your email address where you want to receive emails. 
     $to = 'jbg@jbradygreco.com';
-      
     $subject = 'Contact Request From Website';
     $headers = "From: ".$name." <".$email."> \r\n";
-    $send_email = mail($to,$subject,$message,$headers);
-    
-    echo ($send_email) ? 'success' : 'error';
-      
+
+    mail($to,$subject,$message,$headers);
+    echo (mail($to,$subject,$message,$headers)) ? 'WORKED' : 'FAILED';
+
 }
+
 ?>
