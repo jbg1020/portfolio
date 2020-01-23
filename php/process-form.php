@@ -9,7 +9,6 @@ if (isset($_POST['send'])) {
     $headers = "From: ".$name." <".$email."> \r\n";
 
     mail($to,$subject,$message,$headers);
-    header("Location: /php/process-form.php?mailsend");
 }
 
 ?>
