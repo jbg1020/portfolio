@@ -1,9 +1,9 @@
 <?php
-if (isset($_REQUEST['name'],$_REQUEST['email'])) {
+if (isset($_POST['name'],$_POST['email'])) {
       
-    $name = $_REQUEST['name'];
-    $email = $_REQUEST['email'];
-    $message = $_REQUEST['comment'];
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['comment'];
       
     // Set your email address where you want to receive emails. 
     $to = 'jbg@jbradygreco.com';
