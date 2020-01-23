@@ -10,9 +10,9 @@ if (isset($_POST['name'],$_POST['email'])) {
       
     $subject = 'Contact Request From Website';
     $headers = "From: ".$name." <".$email."> \r\n";
-    $send_email = mail($to,$subject,$message,$headers);
+    mail($to,$subject,$message,$headers);
     
-    echo ($send_email) ? 'success' : 'error';
+    echo (mail($to,$subject,$message,$headers)) ? 'success' : 'error';
       
 }
 ?>
