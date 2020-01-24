@@ -1,7 +1,7 @@
 <?php
 
 if (isset($_POST['name'],$_POST['email'])) {
-      
+    print_r($_POST);
     $name = $_POST['name'];
     $email = $_POST['email'];
     $message = $_POST['comment'];
@@ -10,8 +10,13 @@ if (isset($_POST['name'],$_POST['email'])) {
     $subject = 'Contact Request From Website';
     $headers = "From: ".$name." <".$email."> \r\n";
     $send_email = mail($to,$subject,$message,$headers);
+
     
-print_r($_POST);
+    print("To:: ".$to);
+    print("Subject:: ".$subject);
+    print("Message:: ".$message);
+    print("Headers:: ".$headers);
+    
 
     echo ($send_email) ? 'success' : 'error';
       

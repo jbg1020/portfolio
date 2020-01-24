@@ -46,7 +46,7 @@
 
                     console.log("Result:", result);
 
-                    if (result == "success") {
+                    if (result) {
                         $(".contactform").find(".output_message").addClass("success");
                         $(".output_message").text("Message Sent!");
                     } else {
