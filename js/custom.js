@@ -41,8 +41,7 @@
             $.ajax({
                 url: form.attr("action"),
                 method: form.attr("method"),
-                // data: form.serialize(),
-                data = {},
+                data: form.serialize(),
                 success: function(result) {
 
                     console.log("Result:", result);
