@@ -35,11 +35,17 @@
             $(".output_message").text("Loading...");
 
             var form = $(this);
+
+            console.log("var form =", form);
+
             $.ajax({
                 url: form.attr("action"),
                 method: form.attr("method"),
                 data: form.serialize(),
                 success: function(result) {
+
+                    console.log("Result:", result);
+
                     if (result == "success") {
                         $(".contactform").find(".output_message").addClass("success");
                         $(".output_message").text("Message Sent!");

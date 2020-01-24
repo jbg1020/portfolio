@@ -11,6 +11,8 @@ if (isset($_POST['name'],$_POST['email'])) {
     $headers = "From: ".$name." <".$email."> \r\n";
     $send_email = mail($to,$subject,$message,$headers);
     
+print_r($_POST);
+
     echo ($send_email) ? 'success' : 'error';
       
 }
