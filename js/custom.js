@@ -57,6 +57,7 @@
         //     });
 
         $('form.contactform').on('submit', function() {
+            $(".output_message").text("Loading...");
             var that = $(this),
                 url = that.attr('action'),
                 type = that.attr('method'),
