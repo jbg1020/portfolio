@@ -31,25 +31,62 @@
 		}));
 
         // AJAX CONTACT FORM
-        $(".contactform").on("submit", function() {
-            $(".output_message").text("Loading...");
+        // $(".contactform").on("submit", function() {
+        //     $(".output_message").text("Loading...");
 
-            var form = $(this);
+        //     var form = $(this);
+
+        //     console.log("var form =", form);
+
+        //     $.ajax({
+        //         url: form.attr("action"),
+        //         method: form.attr("method"),
+        //         data: form.serialize(),
+        //         success: function(result) {
+
+        //             console.log("Result:", result);
+
+        //             if (result == "success") {
+        //                 $(".contactform").find(".output_message").addClass("success");
+        //                 $(".output_message").text("Message Sent!");
+        //             } else {
+        //                 $(".contactform").find(".output_message").addClass("error");
+        //                 $(".output_message").text("Error Sending!");
+        //             }
+        //         }
+        //     });
+
+        $('form.contactform').on('submit', function() {
+            $(".output_message").text("Loading...");
+            var that = $(this),
+                url = that.attr('action'),
+                type = that.attr('method'),
+                data = {};
+
+            that.find('[name]').each(function(index, value) {
+                var that = $(this),
+                    name = that.attr('name'),
+                    value = that.val();
+
+                data[name] = value;
+                
+            });
+            
             $.ajax({
-                url: form.attr("action"),
-                method: form.attr("method"),
-                data: form.serialize(),
-                success: function(result) {
-                    if (result == "success") {
+                url: url,
+                type: type,
+                data: data,
+                success: function(response) {
+                    if (response == "success") {
                         $(".contactform").find(".output_message").addClass("success");
                         $(".output_message").text("Message Sent!");
                     } else {
                         $(".contactform").find(".output_message").addClass("error");
                         $(".output_message").text("Error Sending!");
-                    }
+                    }                    
                 }
             });
-
+            
             return false;
         });
 
