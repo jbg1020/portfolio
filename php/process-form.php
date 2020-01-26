@@ -23,7 +23,7 @@ if (array_key_exists('email', $_POST)) {
     $mail->addAddress('jbg@jbradygreco.com', 'Brady');
 
     if ($mail->addReplyTo($_POST['email'], $_POST['name'])) {
-        $mail->Subject = 'Contact Request From Website';
+        $mail->Subject = 'jbradygreco.com NEW MESSAGE';
         $mail->isHTML(false);
         $mail->Body = <<<EOT
 Email: {$_POST['email']}
