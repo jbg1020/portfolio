@@ -53,6 +53,7 @@ EOT;
             //The reason for failing to send will be in $mail->ErrorInfo
             //but you shouldn't display errors to users - process the error, log it on your server.
             $msg = 'Sorry, something went wrong. Please try again later.';
+            echo 'Mailer Error: ' . $mail->ErrorInfo;
         } else {
             $msg = 'Message sent! Thanks for contacting us.';
         }
