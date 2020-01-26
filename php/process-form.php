@@ -36,7 +36,7 @@ if (array_key_exists('email', $_POST)) {
     //Use a fixed address in your own domain as the from address
     //**DO NOT** use the submitter's address here as it will be forgery
     //and will cause your messages to fail SPF checks
-    $mail->setFrom(jbg@jbradygreco.com', 'Webmaster');
+    $mail->setFrom('jbg@jbradygreco.com', 'Webmaster');
     //Send the message to yourself, or whoever should receive contact for submissions
     $mail->addAddress('jbg1020@gmail.com', 'Brady');
     //Put the submitter's address in a reply-to header
