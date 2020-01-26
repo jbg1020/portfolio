@@ -1,4 +1,7 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 require 'PHPMailerAutoload.php';
 
 // if (isset($_POST['name'],$_POST['email'])) {
