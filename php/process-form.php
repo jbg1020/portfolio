@@ -1,7 +1,5 @@
 <?php
 ini_set('display_errors', 1);
-use PHPMailer;
-use Exception;
 
 require 'PHPMailerAutoload.php';
 
@@ -26,19 +24,20 @@ if (array_key_exists('email', $_POST)) {
 
     $mail = new PHPMailer;
     $mail->isSMTP();
+    $mail->SMTPDebug = 3;
     $mail->Host = 'email-smtp.us-west-2.amazonaws.com';
     $mail->SMTPAuth = true;
     $mail->Username = 'AKIAUX75NNCROXQGEEWY';
-    $mail->Pasword = 'BGTaItimmBSmdKmJZzxgdxQOIUk/3r+nXFljf25c11J+';
+    $mail->Password = 'BGTaItimmBSmdKmJZzxgdxQOIUk/3r+nXFljf25c11J+';
     $mail->SMTPSecure = 'tls';
-    $mail->Port = 465;
+    $mail->Port = 587;
 
     //Use a fixed address in your own domain as the from address
     //**DO NOT** use the submitter's address here as it will be forgery
     //and will cause your messages to fail SPF checks
     $mail->setFrom('jbg@jbradygreco.com', 'Webmaster');
     //Send the message to yourself, or whoever should receive contact for submissions
-    $mail->addAddress('jbg1020@gmail.com', 'Brady');
+    $mail->addAddress('jbg@jbradygreco.com', 'Brady');
     //Put the submitter's address in a reply-to header
     //This will fail if the address provided is invalid,
     //in which case we should ignore the whole request
